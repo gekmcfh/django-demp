@@ -20,6 +20,20 @@ class BlogTest(TestCase):
             author = self.user,
         )
 
+    def test_post_content(self):
+        self.assertEqual(f'{self.post.title}','A good title')
+        self.assertEqual(f'{self.post.author}','testuser')
+        self.assertEqual(f'{self.post.body}','Nice body content')
+
+    def test_post_list_view(self):
+        response = self.client.get(reverse('home'))
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response,'Nice body content')
+        self.assertTemplateUsed(response,'home.html')
+
+    def test_get_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(),'/post/1')
+
     def test_string_representation(self):
         post=Post(title='A sample title')
         self.assertEqual(str(post),post.title)

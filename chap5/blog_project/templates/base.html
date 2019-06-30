@@ -11,9 +11,14 @@
             <div class="nav-left"><h1><a href="{% url 'home' %}">Django blog</a></h1></div>
             <div class="nav-right"><a href="{% url 'post_new' %}">New Blog Post</a></div>
         </header>
-        <div>
+        {% if user.is_authenticated %}
+            <p>Привет, {{user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Выход</a> </p>
+        {% else %}
+        <p>Вы не представились.</p>
+        <a href="{% url 'login' %}">Представиться</a>
+        {% endif %}
             {% block content %}
             {% endblock content %}
-        </div>
     </body>
 </html>
