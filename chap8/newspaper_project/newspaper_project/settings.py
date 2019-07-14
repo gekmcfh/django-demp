@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #Local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',  # new
+    'articles.apps.ArticlesConfig',
     #3rd party
     'crispy_forms',  #new
 
@@ -129,3 +130,4 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+TIME_ZONE = 'Europe/Moscow' #new
