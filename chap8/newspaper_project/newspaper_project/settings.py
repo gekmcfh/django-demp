@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     #3rd party
     'crispy_forms',  #new
+    'bootstrap4',
 
     'django.contrib.admin',
     'django.contrib.auth',
