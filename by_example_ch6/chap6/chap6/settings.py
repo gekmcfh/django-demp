@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     # local
+    'blog.apps.BlogConfig',
     'actions.apps.ActionsConfig',
 
     # generic
