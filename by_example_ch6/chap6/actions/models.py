@@ -33,15 +33,6 @@ class Action(models.Model):
     class Meta:
         ordering = ('-created',)
 
-class SoftwareProduct(models.Model):
-    pass
 
-
-class Firmware(models.Model):
-    title = models.CharField(max_length=150)
-    softwareproduct = models.OneToOneField()
-
-class OS(models.Model):
-    title = models.CharField(max_length=150)
 
 
